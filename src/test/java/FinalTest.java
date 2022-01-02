@@ -1,11 +1,14 @@
 import org.testng.annotations.*;
 import utils.BookStore;
 import utils.LoginPage;
+import utils.RegisterUserAPI;
 
 public class FinalTest {
     @Test
     public void test1() {
-        new LoginPage("michael", "Scranton&5");
+        String username = "michael", password = "Scranton&5";
+        new RegisterUserAPI(username, password);
+        new LoginPage(username, password);
     }
 
     @Test
